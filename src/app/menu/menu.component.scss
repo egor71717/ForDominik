@@ -1,0 +1,13 @@
+.menu-item{
+    a {
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: blue;
+    }
+    list-style-type: none;
+    margin: 1rem;
+    cursor: pointer;
+
+}

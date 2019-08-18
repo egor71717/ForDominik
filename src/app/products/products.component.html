@@ -1,0 +1,10 @@
+<div style="display: flex;">
+    <li *ngFor="let product of products" (click)="onProductOpen(product)">
+        {{ product.name }}
+    </li>
+</div>
+<app-product 
+    [product]="openedProduct" 
+    *ngIf="openedProduct"
+    (close)="this.openedProduct = undefined;">
+</app-product>

@@ -1,0 +1,10 @@
+<nav>
+    <ul style="display: flex; justify-content: center;">
+        <li 
+            *ngFor="let menuItem of this.menuItems" 
+            (click)="changeMenu(menuItem)"
+            class="menu-item">
+            <a href="#">{{ menuItem }}</a>
+        </li>
+    </ul>
+</nav>
