@@ -9,12 +9,25 @@ export class MenuComponent implements OnInit {
 
   @Output() menuChange = new EventEmitter();
 
+  itemWithOpenedChildren = undefined;
   menuItems = [
-    'Main',
-    'Home',
-    'Products',
-    'Work',
-    'Team',
+    {
+      title: 'Home',
+      path: '/'
+    },
+    {
+      title: 'Products',
+      path: '/products',
+      children: [
+        "Tv",
+        "Phone",
+        "vibrator"
+      ]
+    },
+    {
+      title: 'Work',
+      path: '/work'
+    }
   ]
 
   constructor() { }

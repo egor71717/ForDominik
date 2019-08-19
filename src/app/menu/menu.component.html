@@ -2,9 +2,15 @@
     <ul style="display: flex; justify-content: center;">
         <li 
             *ngFor="let menuItem of this.menuItems" 
-            (click)="changeMenu(menuItem)"
             class="menu-item">
-            <a href="#">{{ menuItem }}</a>
+            <a *ngIf="!menuItem.children" [routerLink]="menuItem.path">{{ menuItem.title }}</a>
+            <ng-container  *ngIf="menuItem.children">
+                <a (click)="itemWithOpenedChildren = menuItem.title">{{ menuItem.title }}</a>
+                <div [hidden]="itemWithOpenedChildren !== menuItem.title">
+                    <a *ngFor="let child of menuItem.children" [routerLink]="[menuItem.path, child]" style="margin: 1 rem;">{{ child }}</a>
+                </div>
+            </ng-container>
+            
         </li>
     </ul>
 </nav>
