@@ -1,0 +1,24 @@
+<p>recipies works!</p>
+<form>
+        <div>
+            <label for="f-name">login</label>
+            <input [(ngModel)]="login" type="text" name="name" id="f-name">
+        </div>
+        <div>
+            <label for="f-dob">password</label>
+            <input [(ngModel)]="password" type="text" name="dob" id="f-dob">
+        </div>
+        <button (click)="onAdd()">submit</button>
+        <p>{{result}}</p>
+    </form>
+
+
+
+    items: 
+
+    <div *ngFor="let item of items; index as i;" style="padding: 1rem; margin: 1rem; border: 1px solid black;">
+        <p>{{item.date}}</p>
+        <p>{{item.login}}</p>
+        <p>{{item.password}}</p>
+        <button (click)="onDelete(i)">delete</button>
+    </div>

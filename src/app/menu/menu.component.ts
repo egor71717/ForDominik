@@ -16,6 +16,10 @@ export class MenuComponent implements OnInit {
       path: '/'
     },
     {
+      title: 'Recipies',
+      path: '/recipies'
+    },
+    {
       title: 'Products',
       path: '/products',
       children: [
